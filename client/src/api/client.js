@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL ?? "http://localhost:5000/api/v1",
+  baseURL: import.meta.env.VITE_API_URL ?? "http://localhost:5000/",
   withCredentials: true,
 });
 
@@ -14,4 +14,11 @@ export function errorMessage(err) {
     if (first) return first;
   }
   return error ?? "Something went wrong. Try again.";
+}
+
+// Field-level messages from a validation error, e.g. { email: "Invalid email" }.
+export function fieldErrors(err) {
+  const details = err.response?.data?.details;
+  if (!details) return {};
+  return Object.fromEntries(Object.entries(details).map(([k, v]) => [k, [].concat(v)[0]]));
 }
