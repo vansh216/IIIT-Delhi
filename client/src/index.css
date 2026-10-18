@@ -10,6 +10,8 @@
   --color-blue: #234e8f;
   --color-alert: #b8412c;
   --color-alert-wash: #fbeeea;
+  --color-ok: #1d6b45;
+  --color-ok-wash: #e8f5ee;
   --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Hind", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
 }
